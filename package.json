@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "ast-traverse": "~0.1.0",
-    "lodash": "~2.0.0",
+    "lodash": "~4.0.0",
     "acorn": "~0.3.1",
     "escope": "~1.0.0"
   }
