@@ -10,8 +10,8 @@ var methods = _.functions(_);
 
 
 function isImplicit(node, scopes) {
-  return _.any(scopes, function(scope) {
-    return _.any(scope.references, function(reference) {
+  return _.some(scopes, function(scope) {
+    return _.some(scope.references, function(reference) {
       return reference.identifier === node && !reference.resolved;
     });
   });
@@ -23,7 +23,7 @@ var postOrder = {
     var target = node.callee;
     if (target.type === 'MemberExpression' &&
         target.property.type === 'Identifier' &&
-        _.contains(methods, target.property.name)) {
+        _.includes(methods, target.property.name)) {
       this.found.push(target.property.name);
     }
   },
